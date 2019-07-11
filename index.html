@@ -2,19 +2,21 @@
 <html>
 <script src="https://aframe.io/releases/0.9.1/aframe.min.js"></script>
 <script src="https://unpkg.com/aframe-animation-component@^5.1.2/dist/aframe-animation-component.min.js"></script>
+<script src="https://unpkg.com/aframe-orbit-controls@1.2.0/dist/aframe-orbit-controls.min.js"></script>
+<script src="https://unpkg.com/aframe-text-geometry-component@0.5.1/dist/aframe-text-geometry-component.min.js"></script>
 
   <body style='margin : 0px; overflow: hidden;'>
     <a-scene >
       <a-assets>
 
-        <a-asset-item id="model" src="bp.glb" ></a-asset-item>
+        <a-asset-item id="model" src="models/quant.glb" ></a-asset-item>
 
 
       </a-assets>
-        <a-entity gltf-model="#model" position="0 0 0"  scale="1 1.17 1" rotation="90 0 0"  > ></a-entity>
+        <a-entity gltf-model="#model" position="-6.45 0 -13.974"  scale="1 1.17 1" rotation="90 0 0"  > ></a-entity>
 
-    <a-plane color="black" height="10" width="10" scale="1.95 3.17 1" position="4.65 0 .7" rotation="-90 0 0"></a-plane>
-    
+    <a-plane color="black" height="10" width="10" scale="1.95 3.17 1" position="-1.139 0 -16.500" rotation="-90 0 0"></a-plane>
+
     </a-scene>
   </body>
 </html>
