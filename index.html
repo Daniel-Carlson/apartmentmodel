@@ -16,33 +16,8 @@
                 //Called when trigger is pressed 
                 this.el.addEventListener('triggerdown', function (e) {
                     //"this" reffers ctlR or L in this function
-                    var point = this.object3D.getWorldPosition();
-                    //txt.setAttribute("value",point.x.toFixed(2)+","+point.y.toFixed(2)+","+point.z.toFixed(2));
-                    //Creating ball entity.
-                    var ball = document.createElement('a-sphere');
-                    ball.setAttribute('class', 'ball');
-                    ball.setAttribute('scale', '0.2 0.2 0.2');
-                    ball.setAttribute('position', point);
-                    ball.setAttribute('dynamic-body', 'shape: sphere; sphereRadius:0.2; ');
-                    //Getting raycaster which was attached to ctrlR or L
-                    var dir = this.getAttribute("raycaster").direction;
-                    //Setting shoot dierction and speed 
-                    var force = new THREE.Vector3(dir.x, dir.y, dir.z);
-                    force.multiplyScalar(2000);                   
-                    ball.force = this.object3D.localToWorld(force);
-                    //Instantiate ball entity in a-scene
-                    var scene = document.querySelector('a-scene');
-                    scene.appendChild(ball);
-                    //shoot "ball" after physics information getting ready. 
-                    ball.addEventListener('body-loaded', function (e) {
-                        //"this" reffers ball entity in this function
-                        var p = this.object3D.position;
-                        //this.velocity was calculated before this function is called.
-                        var f = this.force;
-                        this.body.applyForce(
-                            new CANNON.Vec3(f.x, f.y, f.z),
-                            new CANNON.Vec3(p.x, p.y, p.z)
-                        );
+                    
+                    
                     });
                 });
                 //Grip Pressed
@@ -99,7 +74,7 @@
         <a-entity gltf-model="#model" position="-6.45 0 -13.974"  scale="1 1.17 1" rotation="90 0 0"  > ></a-entity>
         <a-entity oculus-touch-controls="hand: left"></a-entity>
         <a-entity oculus-touch-controls="hand: right"></a-entity>
-        <a-entity camera look-controls wasd-controls position="0 5 0" acceleration="500"></a-entity>
+        <a-entity camera look-controls wasd-controls="acceleration:500" position="0 5 0" ></a-entity>
 
 
     <a-plane color="black" height="10" width="10" scale="1.95 3.17 1" position="-1.139 0 -16.500" rotation="-90 0 0"></a-plane>
