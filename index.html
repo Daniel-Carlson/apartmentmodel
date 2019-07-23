@@ -16,16 +16,16 @@
 
       </a-assets>
         <a-entity gltf-model="#model" position="-6.45 0 -13.974"  scale="1 1.17 1" rotation="90 0 0"  > ></a-entity>
-        <a-entity id="leftHand" hand-controls="left"></a-entity>
+   
     
         <a-entity id="rig"
-          movement-controls
-          position="25 0 25">
-  <a-entity camera
+            movement-controls="controls: checkpoint"
+              checkpoint-controls="mode: animate">
+    <a-entity camera
             position="0 1.6 0"
-            look-controls="pointerLockEnabled: true"></a-entity>
-</a-entity>
-      
+            look-controls="pointerLockEnabled: true">
+                   </a-entity>
+        </a-entity>
        
 
 
